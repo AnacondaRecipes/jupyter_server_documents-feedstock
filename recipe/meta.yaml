@@ -27,8 +27,10 @@ requirements:
     - jupyter-collaboration-ui >=2.0.2,<3
     - jupyter_server >=2.4.0,<3
     - jupyter_server_fileid >=0.9.0,<0.10.0
-    - pycrdt >=0.12.49
     - jupyter_ydoc >=3.0.0,<4.0.0
+    - pycrdt >=0.12.49
+  run_constrained:
+    - jupyterlab >=4.0.0,<5
 
 tests:
   - python:
