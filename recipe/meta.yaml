@@ -10,20 +10,20 @@ source:
   sha256: 28085f19d00266100f308f1920d1524831d7a531e4c2dd88f6ec263b98f62cff
 
 build:
-  noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [py<39]
   number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.9
+    - python
     - hatchling >=1.5.0
     - jupyterlab >=4.0.0,<5
     - hatch-nodejs-version >=0.3.2
     - hatch-jupyter-builder >=0.5
     - pip
   run:
-    - python >=3.9
+    - python
     - jupyter-collaboration-ui >=2.0.2,<3
     - jupyter_server >=2.4.0,<3
     - jupyter_server_fileid >=0.9.0,<0.10.0
