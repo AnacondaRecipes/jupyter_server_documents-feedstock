@@ -32,12 +32,14 @@ requirements:
   run_constrained:
     - jupyterlab >=4.0.0,<5
 
-tests:
-  - python:
-      imports:
-        - jupyter_server_documents
-      # Also run `pip check` to verify the integrity
-      pip_check: true
+test:
+  imports:
+    - jupyter_server_documents
+  requires:
+    - pip
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
 
 about:
   homepage: https://github.com/jupyter-ai-contrib/jupyter-server-documents
